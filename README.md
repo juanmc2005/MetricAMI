@@ -62,6 +62,16 @@ python train.py \
        --exp-path <EXPERIMENT_PATH>
 ```
 
+## Results
+
+Our results show that none of the considered losses can outperform the regular cross entropy, and we outperform the Evalita 2018 winner with our BERT model.
+
+<p align="center">
+  <img src="ami_results.png" width="520">
+</p>
+
+A more detailed analysis of the results can be found in the paper.
+
 ## Citation
 
 If our work has been useful to you, please cite our paper:
