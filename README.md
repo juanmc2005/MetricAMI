@@ -37,7 +37,7 @@ At this point you should have a directory tree like this:
 ## Train an LSTM Model
 
 To train this model you will need the generated vocabulary as well as a word2vec GENSIM model (soon to be uploaded).
-You can of course train any of the other loss functions in a similar manner by modifying the parameters (see [here](TODO) for the parameter list and description).
+You can of course train any of the other loss functions in a similar manner by modifying the parameters (see [here](args.py) for the parameter list and description).
 
 ```shell
 python train.py \
@@ -52,7 +52,7 @@ python train.py \
 ## Train a BERT Model
 
 Training BERT is easier thanks to the Huggingface library, you just need to run the following script.
-As with the LSTM, any other loss function from the paper can also be trained (see [here](TODO)).
+As with the LSTM, any other loss function from the paper can also be trained (see [here](args.py)).
 
 ```shell
 python train.py \
