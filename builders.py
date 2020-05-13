@@ -1,4 +1,4 @@
-from gensim.models import Word2Vec
+from gensim.models import KeyedVectors
 from transformers import BertTokenizer
 from models import MetricNet, AMILSTM, AMIBert
 from datasets.ami import AMI
@@ -25,7 +25,7 @@ def build_model(args, nfeat: int, clf):
     dataset = AMI(args.path)
     if args.model == 'lstm':
         # Create vocabulary
-        vocab_vec = Word2Vec.load(args.word2vec_model).wv
+        vocab_vec = KeyedVectors.load(args.word2vec_model, mmap='r')
         vocab = [line.strip() for line in open(args.vocab, 'r')]
         # Build LSTM encoder and its loader
         encoder = AMILSTM(nfeat_word=300, nfeat_sent=nfeat,
