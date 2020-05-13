@@ -36,18 +36,20 @@ At this point you should have a directory tree like this:
 
 ## Train an LSTM Model
 
-To train this model you will need the generated vocabulary as well as a GENSIM `KeyedVectors` dump (soon to be uploaded).
+To train this model you will need the generated vocabulary as well as a GENSIM `KeyedVectors` dump of CBOW Wikipedia word embeddings (included in this repo).
 You can of course train any of the other loss functions in a similar manner by modifying the parameters (see [here](args.py) for the parameter list and description).
 
 ```shell
 python train.py \
        --path <NEW_AMI_PATH> \
        --vocab /path/to/ami_vocab.txt \
-       --word2vec-model word_embeddings/Cbowwiki_en_data_iter5_vec_size_300 \
+       --word2vec-model word_embeddings/ami2vec.kv \
        --epochs 60 --save --batch-size 32 --log-interval 50 \
        --model lstm --loss softmax --lr 1e-3 \
        --exp-path <EXPERIMENT_PATH>
 ```
+
+This model will need around 700Mb of GPU RAM.
 
 ## Train a BERT Model
 
@@ -62,15 +64,17 @@ python train.py \
        --exp-path <EXPERIMENT_PATH>
 ```
 
+BERT will need around 4.5Gb of GPU RAM.
+
 ## Results
 
-Our results show that none of the considered losses can outperform the regular cross entropy, and we outperform the Evalita 2018 winner with our BERT model.
+Our results show that none of the considered losses can outperform the regular cross entropy, and we outperform the Evalita 2018 winner with our fine-tuned BERT model.
 
 <p align="center">
   <img src="ami_results.png" width="520">
 </p>
 
-A more detailed analysis of the results can be found in the paper.
+A detailed analysis of the results can be found in the paper.
 
 ## Citation
 
