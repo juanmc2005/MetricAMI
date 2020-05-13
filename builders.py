@@ -29,7 +29,7 @@ def build_model(args, nfeat: int, clf):
         vocab = [line.strip() for line in open(args.vocab, 'r')]
         # Build LSTM encoder and its loader
         encoder = AMILSTM(nfeat_word=300, nfeat_sent=nfeat,
-                          word_list=vocab, vec_vocab=vocab_vec, dropout=0.2)
+                          word_list=vocab, vec_vocab=vocab_vec)
         loader = dataset.word2vec_loader(args.batch_size)
     elif args.model == 'bert':
         # Load pretrained tokenizer

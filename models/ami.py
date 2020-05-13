@@ -7,7 +7,7 @@ import constants
 
 class AMILSTM(nn.Module):
 
-    def __init__(self, nfeat_word: int, nfeat_sent: int, word_list: list, vec_vocab, dropout: float = 0):
+    def __init__(self, nfeat_word: int, nfeat_sent: int, word_list: list, vec_vocab):
         super(AMILSTM, self).__init__()
         self.nfeat_word = nfeat_word
         self.nfeat_sent = nfeat_sent
@@ -20,9 +20,11 @@ class AMILSTM(nn.Module):
         for i, word in enumerate(word_list):
             pretrained_weight[i] = np.array(vec_vocab[word]) if word in vec_vocab else np.zeros(nfeat_word)
         self.word_embedding.weight.data.copy_(torch.from_numpy(pretrained_weight))
-        self.lstm = nn.LSTM(input_size=nfeat_word, hidden_size=nfeat_sent // 2,
-                            num_layers=1, bidirectional=True,
-                            dropout=dropout, batch_first=True).to(constants.DEVICE)
+        self.lstm = nn.LSTM(input_size=nfeat_word,
+                            hidden_size=nfeat_sent // 2,
+                            num_layers=1,
+                            bidirectional=True,
+                            batch_first=True).to(constants.DEVICE)
 
     def forward(self, sents: list) -> torch.Tensor:
         """
