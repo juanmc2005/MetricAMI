@@ -1,6 +1,8 @@
 # A Metric Learning Approach to Misogyny Categorization
 
-This is the companion repository for the paper "A Metric Learning Approach to Misogyny Categorization", published at the [5th Workshop on Representation Learning for NLP (RepL4NLP)](https://sites.google.com/view/repl4nlp2020/home) at ACL 2020.
+This is the official companion repository for the paper, published at the [5th Workshop on Representation Learning for NLP (RepL4NLP)](https://sites.google.com/view/repl4nlp2020/home) at ACL 2020.
+
+[Access to the full paper](https://www.aclweb.org/anthology/2020.repl4nlp-1.12/)
 
 The project contains all the code needed to run the experiments.
 
@@ -81,5 +83,18 @@ A detailed analysis of the results can be found in the paper.
 If our work has been useful to you, please cite our paper:
 
 ```bibtex
-To be added soon!
+@inproceedings{coria-etal-2020-metric,
+    title = "A Metric Learning Approach to Misogyny Categorization",
+    author = "Coria, Juan Manuel  and
+      Ghannay, Sahar  and
+      Rosset, Sophie  and
+      Bredin, Herv{\'e}",
+    booktitle = "Proceedings of the 5th Workshop on Representation Learning for NLP",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.repl4nlp-1.12",
+    pages = "89--94"
+}
 ```
