@@ -4,5 +4,5 @@ scikit-learn >= 0.22.2.post1
 matplotlib >= 3.2.0rc3
 nltk >= 3.4.3
 gensim >= 3.8.1
-transformers == 2.5.1
+transformers == 4.30.0
 tokenizers == 0.5.2
